@@ -9,6 +9,7 @@ import { Input } from "./meta";
 export function generate(input: Input): Output {
   const services: Services = [];
   const secret = randomString(64);
+  const totpkey = randomString(32);
   const databasePassword = randomPassword();
 
   services.push({
@@ -21,6 +22,7 @@ export function generate(input: Input): Output {
         `DATABASE_URL=postgres://postgres:${databasePassword}@$(PROJECT_NAME)_${input.databaseServiceName}:5432/$(PROJECT_NAME)`,
         `CLICKHOUSE_DATABASE_URL=http://$(PROJECT_NAME)_${input.clickhouseServiceName}:8123/default`,
         `SECRET_KEY_BASE=${secret}`,
+        `TOTP_VAULT_KEY=${totpkey}`,
       ].join("\n"),
       source: {
         type: "image",
