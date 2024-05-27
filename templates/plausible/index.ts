@@ -46,7 +46,7 @@ export function generate(input: Input): Output {
       serviceName: input.clickhouseServiceName,
       source: {
         type: "image",
-        image: "clickhouse/clickhouse-server:22.6-alpine",
+        image: "clickhouse/clickhouse-server:23.8.14.6-alp",
       },
       domains: [
         {
