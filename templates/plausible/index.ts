@@ -36,7 +36,7 @@ export function generate(input: Input): Output {
       ],
       deploy: {
         command:
-          "sleep 10 && /entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh db init-admin && /entrypoint.sh run",
+          "sleep 10 && /entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh run",
       },
     },
   });
