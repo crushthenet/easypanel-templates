@@ -99,7 +99,7 @@ export function generate(input: Input): Output {
   services.push({
     type: "postgres",
     data: {
-      image: "postgres:14",
+      image: "postgres:16-alpine",
       projectName: input.projectName,
       serviceName: input.databaseServiceName,
       password: databasePassword,
